@@ -70,10 +70,18 @@ public class Main {
         System.out.println(worker.getMinSalary());
         System.out.println(worker.getMaxSalary());
 
+        double answer = worker.calculatePension();
+
 
         //System.out.println(Month.APRIL.getNumber());
         //System.out.println(Month.DECEMBER.getNumber());
         //System.out.println(Month.NOVEMBER.getNumber());
+
+        //1) Создать интерфейс AbleToCalculatePension с одним методом calculatePension, возвращающим дробное число
+        //
+        //2) класс Worker должен реализовать этот интерфейс (implements). реализация метода выглядит так:
+        //
+        //а) Внутри метода создается объект класса Пенсионный фонд (из дз от 14 декабря). В нем вызывается метод расчета пенсии, в него передаются параметры: возраст, минимальная, максимальная зарплаты. Результат этого метода возвращается из метода calculatePension
 
 
 

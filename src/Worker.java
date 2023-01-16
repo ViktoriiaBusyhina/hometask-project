@@ -1,4 +1,4 @@
-public class Worker extends Person {
+public class Worker extends Person implements AbleToCalculatePension {
 
     private double minSalary;
     private double maxSalary;
@@ -90,6 +90,14 @@ public class Worker extends Person {
         minSalary *= number;
         maxSalary *= number;
 
+    }
+
+    @Override
+    public double calculatePension() {
+        PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина", true, "16-01-2023");
+        int years = getYears();
+        pensionFund.calculatePension(years, minSalary, maxSalary);
+        return 0;
     }
 }
 
