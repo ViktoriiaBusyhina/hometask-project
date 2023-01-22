@@ -70,7 +70,14 @@ public class Main {
         System.out.println(worker.getMinSalary());
         System.out.println(worker.getMaxSalary());
 
-        double answer = worker.calculatePension();
+
+        worker.setMinSalary(1000);
+        worker.setMaxSalary(2000);
+        worker.setYears(50);
+
+        double answer = worker.requestFundToCalculatePension();
+        System.out.println(worker + ", твоя пенсия составит $:");
+        System.out.println(answer);
 
 
         //System.out.println(Month.APRIL.getNumber());

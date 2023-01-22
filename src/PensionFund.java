@@ -6,22 +6,30 @@ public class PensionFund {
     private static final int AVERAGE_SALARY = 1500;
 
     private String name;
-    private boolean isState;
     private final String date;
 
-    public PensionFund(String name, boolean isState, String date) {
+    private TypeOfFund type;
+
+    public PensionFund(String name, String date, TypeOfFund type) {
         this.name = name;
-        this.isState = isState;
         this.date = date;
+        this.type = type;
     }
 
     public double calculatePension(int age, double minSalary, double maxSalary) {
         double averageSalary;
-        if (isState) {
-            averageSalary = AverageUtils.average(minSalary, maxSalary);
-        }
-        else {
-            averageSalary = AverageUtils.average(minSalary, maxSalary, AVERAGE_SALARY);
+        switch (type) {
+            case STATE:
+                averageSalary = AverageUtils.average(minSalary, maxSalary);
+                break;
+            case NOT_STATE:
+                averageSalary = AverageUtils.average(minSalary, maxSalary, AVERAGE_SALARY);
+                break;
+            case SCAM:
+                averageSalary = 0;
+                break;
+            default:
+                averageSalary = 0;
         }
         return averageSalary * age * PENSION_COEFFICIENT;
     }
@@ -33,25 +41,18 @@ public class PensionFund {
 
         PensionFund that = (PensionFund) o;
 
-        if (isState != that.isState) return false;
         if (!Objects.equals(name, that.name)) return false;
-        return Objects.equals(date, that.date);
+        if (!Objects.equals(date, that.date)) return false;
+        return type == that.type;
     }
 
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (isState ? 1 : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "PensionFund{" +
-                "name='" + name + '\'' +
-                ", isState=" + isState +
-                ", date='" + date + '\'' +
-                '}';
-    }
+
 }

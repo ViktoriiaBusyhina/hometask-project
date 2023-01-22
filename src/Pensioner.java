@@ -25,4 +25,11 @@ public class Pensioner extends Person {
     public void setPension(double pension) {
         this.pension = pension;
     }
+
+    @Override
+    public String toString() {
+        return "Pensioner{" +
+                "pension=" + pension +
+                '}';
+    }
 }

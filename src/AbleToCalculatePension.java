@@ -1,5 +1,5 @@
 public interface AbleToCalculatePension {
 
-    double calculatePension();
+    double requestFundToCalculatePension();
 
 }
