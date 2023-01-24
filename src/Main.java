@@ -50,34 +50,34 @@ public class Main {
         //worker.setMonth(Month.JULY);
         //worker.setSex(Sex.MALE);
 
-        Worker worker = new Worker();
-
-        worker.setMinSalary(1500);
-        worker.setMaxSalary(1800);
-        worker.setMonth(Month.DECEMBER);
-
-        System.out.println(Arrays.toString(Month.values()));
-
-        Month[] months = Month.values();
-        System.out.println(months[4]);
-
-        Month feb = Month.valueOf("FEBRUARY");
-        System.out.println(feb.getNumber());
-
-
-        worker.setNewSalary();
-
-        System.out.println(worker.getMinSalary());
-        System.out.println(worker.getMaxSalary());
-
-
-        worker.setMinSalary(1000);
-        worker.setMaxSalary(2000);
-        worker.setYears(50);
-
-        double answer = worker.requestFundToCalculatePension();
-        System.out.println(worker + ", твоя пенсия составит $:");
-        System.out.println(answer);
+        //Worker worker = new Worker();
+//
+        //worker.setMinSalary(1500);
+        //worker.setMaxSalary(1800);
+        //worker.setMonth(Month.DECEMBER);
+//
+        //System.out.println(Arrays.toString(Month.values()));
+//
+        //Month[] months = Month.values();
+        //System.out.println(months[4]);
+//
+        //Month feb = Month.valueOf("FEBRUARY");
+        //System.out.println(feb.getNumber());
+//
+//
+        //worker.setNewSalary();
+//
+        //System.out.println(worker.getMinSalary());
+        //System.out.println(worker.getMaxSalary());
+//
+//
+        //worker.setMinSalary(1000);
+        //worker.setMaxSalary(2000);
+        //worker.setYears(50);
+//
+        //double answer = worker.requestFundToCalculatePension();
+        //System.out.println(worker + ", твоя пенсия составит $:");
+        //System.out.println(answer);
 
 
         //System.out.println(Month.APRIL.getNumber());
@@ -93,6 +93,8 @@ public class Main {
 
 
         //20-52
+
+        PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина",  "16-01-2023", TypeOfFund.STATE);
 
 
 

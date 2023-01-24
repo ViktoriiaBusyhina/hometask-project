@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Objects;
 
 public class PensionFund {
@@ -9,6 +10,8 @@ public class PensionFund {
     private final String date;
 
     private TypeOfFund type;
+
+    private List<String> currencies;
 
     public PensionFund(String name, String date, TypeOfFund type) {
         this.name = name;
@@ -54,5 +57,11 @@ public class PensionFund {
         return result;
     }
 
+    public List<String> getCurrencies() {
+        return currencies;
+    }
 
+    public void setCurrencies(List<String> currencies) {
+        this.currencies = currencies;
+    }
 }

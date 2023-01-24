@@ -94,7 +94,7 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     @Override
     public double requestFundToCalculatePension() {
-        PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина", true, "16-01-2023");
+        PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина",  "16-01-2023", TypeOfFund.STATE);
         int years = getYears();
         double result = pensionFund.calculatePension(years, minSalary, maxSalary);
         return result;
