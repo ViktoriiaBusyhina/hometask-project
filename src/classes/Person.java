@@ -1,3 +1,5 @@
+package classes;
+
 import java.util.Objects;
 
 public class Person {
@@ -109,7 +111,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "classes.Person{" +
                 "name='" + name + '\'' +
                 ", years=" + years +
                 ", height=" + height +

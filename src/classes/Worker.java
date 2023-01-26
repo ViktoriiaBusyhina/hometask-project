@@ -1,3 +1,5 @@
+package classes;
+
 public class Worker extends Person implements AbleToCalculatePension {
 
     private double minSalary;
@@ -35,7 +37,7 @@ public class Worker extends Person implements AbleToCalculatePension {
     }
 
     public void setNewSalary() {
-        //Sex sex = getSex();
+        //classes.Sex sex = getSex();
 //
         //switch (sex) {
         //    case MALE:
@@ -47,15 +49,15 @@ public class Worker extends Person implements AbleToCalculatePension {
         //        maxSalary *= 1.6;
         //}
 
-        //if (month.equals(Month.DECEMBER)) {
+        //if (month.equals(classes.Month.DECEMBER)) {
         //    minSalary *= 10;
         //    maxSalary *= 10;
         //}
-        //else if (month.equals(Month.NOVEMBER)) {
+        //else if (month.equals(classes.Month.NOVEMBER)) {
         //    minSalary *= 2;
         //    maxSalary *= 2;
         //}
-        //else if (month.equals(Month.JANUARY)) {
+        //else if (month.equals(classes.Month.JANUARY)) {
         //    minSalary *= 1.1;
         //    maxSalary *= 1.1;
         //}
@@ -102,7 +104,7 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     @Override
     public String toString() {
-        return "Worker{" +
+        return "classes.Worker{" +
                 "minSalary=" + minSalary +
                 ", maxSalary=" + maxSalary +
                 ", month=" + month +

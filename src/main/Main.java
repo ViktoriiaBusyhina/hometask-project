@@ -1,10 +1,14 @@
-import java.util.Arrays;
+package main;
+
+
+import classes.PensionFund;
+import classes.TypeOfFund;
 
 public class Main {
     public static void main(String[] args) {
-        //PensionFund statePensionFund = new PensionFund("Goverment", true, "23-08-1989");
-        //PensionFund notStatePensionFund = new PensionFund("New-York lions bank", false, "23-09-2009");
-        //PensionFund notStatePensionFund1 = new PensionFund("New-York lions bank", false, "23-09-2009");
+        //classes.PensionFund statePensionFund = new classes.PensionFund("Goverment", true, "23-08-1989");
+        //classes.PensionFund notStatePensionFund = new classes.PensionFund("New-York lions bank", false, "23-09-2009");
+        //classes.PensionFund notStatePensionFund1 = new classes.PensionFund("New-York lions bank", false, "23-09-2009");
 //
         //double statePension = statePensionFund.calculatePension(40, 1500.0, 2800.0);
         //double notStatePension = notStatePensionFund.calculatePension(40, 1500.0, 2800.0);
@@ -32,8 +36,8 @@ public class Main {
 //
         //System.out.println(statePensionFund);
 //
-        //Pensioner daniil = new Pensioner("Daniil", 45, 67, 2.4, 7.8);
-        //Pensioner daniil1 = new Pensioner("Daniil", 45, 67, 2.4, 1000000);
+        //classes.Pensioner daniil = new classes.Pensioner("Daniil", 45, 67, 2.4, 7.8);
+        //classes.Pensioner daniil1 = new classes.Pensioner("Daniil", 45, 67, 2.4, 1000000);
 //
         //System.out.println(daniil.equals(daniil1));
 //
@@ -44,24 +48,24 @@ public class Main {
         //System.out.println(daniil);
         //daniil.die();
 //
-        //Person person1 = new Person("Daniil", 45, 34, 2.0);
+        //classes.Person person1 = new classes.Person("Daniil", 45, 34, 2.0);
 
-        //Worker worker = new Worker();
-        //worker.setMonth(Month.JULY);
-        //worker.setSex(Sex.MALE);
+        //classes.Worker worker = new classes.Worker();
+        //worker.setMonth(classes.Month.JULY);
+        //worker.setSex(classes.Sex.MALE);
 
-        //Worker worker = new Worker();
+        //classes.Worker worker = new classes.Worker();
 //
         //worker.setMinSalary(1500);
         //worker.setMaxSalary(1800);
-        //worker.setMonth(Month.DECEMBER);
+        //worker.setMonth(classes.Month.DECEMBER);
 //
-        //System.out.println(Arrays.toString(Month.values()));
+        //System.out.println(Arrays.toString(classes.Month.values()));
 //
-        //Month[] months = Month.values();
+        //classes.Month[] months = classes.Month.values();
         //System.out.println(months[4]);
 //
-        //Month feb = Month.valueOf("FEBRUARY");
+        //classes.Month feb = classes.Month.valueOf("FEBRUARY");
         //System.out.println(feb.getNumber());
 //
 //
@@ -80,13 +84,13 @@ public class Main {
         //System.out.println(answer);
 
 
-        //System.out.println(Month.APRIL.getNumber());
-        //System.out.println(Month.DECEMBER.getNumber());
-        //System.out.println(Month.NOVEMBER.getNumber());
+        //System.out.println(classes.Month.APRIL.getNumber());
+        //System.out.println(classes.Month.DECEMBER.getNumber());
+        //System.out.println(classes.Month.NOVEMBER.getNumber());
 
-        //1) Создать интерфейс AbleToCalculatePension с одним методом calculatePension, возвращающим дробное число
+        //1) Создать интерфейс classes.AbleToCalculatePension с одним методом calculatePension, возвращающим дробное число
         //
-        //2) класс Worker должен реализовать этот интерфейс (implements). реализация метода выглядит так:
+        //2) класс classes.Worker должен реализовать этот интерфейс (implements). реализация метода выглядит так:
         //
         //а) Внутри метода создается объект класса Пенсионный фонд (из дз от 14 декабря). В нем вызывается метод расчета пенсии, в него передаются параметры: возраст, минимальная, максимальная зарплаты. Результат этого метода возвращается из метода calculatePension
 
@@ -119,16 +123,16 @@ public class Main {
         //сколько раз хэшкод не вызывай - получится одиковое значение
         //у одинаковых объектов олжен быть 100% одинаковый хэшкод
 
-        //У вас есть класс Person.
+        //У вас есть класс classes.Person.
         //
         //1) Сделать его правильным - создать геттеры и сеттеры, проверить, что он соответствует тем правилам, которые мы с вами обсуждали.
         //
-        //2) Создать классы Pensioner и Worker. Унаследовать их от класса Person. В класс Pensioner добавить дробное поле pension, в класс Worker добавить два поля minSalary и maxSalary.
+        //2) Создать классы classes.Pensioner и classes.Worker. Унаследовать их от класса classes.Person. В класс classes.Pensioner добавить дробное поле pension, в класс classes.Worker добавить два поля minSalary и maxSalary.
         //
-        //3) Класс Person превращаем в абстрактный. В него добавляем абстрактный метод die(), которая ничего не возвращает.
+        //3) Класс classes.Person превращаем в абстрактный. В него добавляем абстрактный метод die(), которая ничего не возвращает.
         //
-        //4) В Worker реализуем этот метод таким образом: пишем на экран сообщение "Этот человек не дожил до пенсии"
+        //4) В classes.Worker реализуем этот метод таким образом: пишем на экран сообщение "Этот человек не дожил до пенсии"
         //
-        //5) В классе Pensioner реализуем так: пишем на экран "Этот пенсионер умер, он заработал: x". Где вместо x нужно рассчитать значение по формуле "(age-50)*pension"
+        //5) В классе classes.Pensioner реализуем так: пишем на экран "Этот пенсионер умер, он заработал: x". Где вместо x нужно рассчитать значение по формуле "(age-50)*pension"
     }
 }

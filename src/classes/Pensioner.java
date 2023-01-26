@@ -1,3 +1,5 @@
+package classes;
+
 public class Pensioner extends Person {
 
     private double pension;
@@ -28,7 +30,7 @@ public class Pensioner extends Person {
 
     @Override
     public String toString() {
-        return "Pensioner{" +
+        return "classes.Pensioner{" +
                 "pension=" + pension +
                 '}';
     }

@@ -1,3 +1,9 @@
+package main;
+
+import classes.Pensioner;
+import classes.Person;
+import classes.Worker;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

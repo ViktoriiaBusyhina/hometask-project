@@ -1,3 +1,8 @@
+package main;
+
+import classes.PensionFund;
+import classes.TypeOfFund;
+
 import java.util.ArrayList;
 import java.util.List;
 

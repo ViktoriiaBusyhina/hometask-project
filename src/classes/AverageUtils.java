@@ -1,3 +1,5 @@
+package classes;
+
 public class AverageUtils {
 
     public static double average(double first, double second, double third) {
