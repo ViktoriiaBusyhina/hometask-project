@@ -1,8 +1,10 @@
 package main;
 
 
-import classes.PensionFund;
-import classes.TypeOfFund;
+import classes.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -134,5 +136,53 @@ public class Main {
         //4) В classes.Worker реализуем этот метод таким образом: пишем на экран сообщение "Этот человек не дожил до пенсии"
         //
         //5) В классе classes.Pensioner реализуем так: пишем на экран "Этот пенсионер умер, он заработал: x". Где вместо x нужно рассчитать значение по формуле "(age-50)*pension"
+
+
+        //У вас в прошлом уроке было создано поле для детей, заполните через сеттер это поле для каждого созданного в Main работника. Добавьте по 3-4 ребенка каждому.
+        //
+        //Теперь необходимо добавить в класс Person метод, который будет выводить инфо о детях в таком формате (на экран):
+        //У меня x детей
+        //1) Петя
+        //2) Вася
+        //...
+        //
+        //Как это реализовать?
+        //нужно циклом foreach пройтись по всем детям, получая их имена
+        //
+        //Далее, в класс Worker тоже необходимо добавить новое поле:
+        //List<Company> - список из компаний, в которых работал человек.
+        //
+        //В класс воркер добавить метод, который пишет подобную строку на экран при вызове:
+        //
+        //"Я работал в следующих компаниях: a, b, c, d". где вместо букв названия компаний из класса company
+
+        Worker worker = new Worker();
+
+        List<Person> children = new ArrayList<>();
+
+        Worker firstChild = new Worker();
+        firstChild.setName("Антон");
+
+        Worker secondChild = new Worker();
+        secondChild.setName("Павел");
+
+        children.add(firstChild);
+        children.add(secondChild);
+
+        worker.setChildren(children);
+
+        worker.infoAboutChildren();
+
+        Company microsoft = new Company("Microsoft");
+        Company google = new Company("Google");
+        //List<Company> companyList = List.of(microsoft, google);
+
+        List<Company> companyList = new ArrayList<>();
+        companyList.add(microsoft);
+        companyList.add(google);
+
+        worker.setCompanyList(companyList);
+
+
     }
 }

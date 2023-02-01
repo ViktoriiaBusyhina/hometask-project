@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.List;
+
 public class Worker extends Person implements AbleToCalculatePension {
 
     private static final int MONEY_PER_CHILD = 200;
@@ -8,6 +10,8 @@ public class Worker extends Person implements AbleToCalculatePension {
     private double maxSalary;
 
     private Month month;
+
+    private List<Company> companyList;
 
     @Override
     public void die() {
@@ -36,6 +40,29 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     public void setMonth(Month month) {
         this.month = month;
+    }
+
+    public List<Company> getCompanyList() {
+        return companyList;
+    }
+
+    public void setCompanyList(List<Company> companyList) {
+        this.companyList = companyList;
+    }
+
+    public void infoAboutCompanies() {
+        System.out.print("Я работал в следующих компаниях: ");
+        boolean start = true;
+
+        for (Company company : companyList) {
+            if (start) {
+                System.out.print(company.getName());
+                start = false;
+            }
+            else {
+                System.out.print(", " + company.getName());
+            }
+        }
     }
 
     public void setNewSalary() {

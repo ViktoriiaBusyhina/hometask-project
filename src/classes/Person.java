@@ -56,6 +56,15 @@ public class Person {
         System.out.println("Непонятно что произошло, но кто-то умер");
     }
 
+    public void infoAboutChildren() {
+        int counter = 0;
+        System.out.println("У меня " + children.size() + " детей");
+        for (Person child : children) {
+            counter++;
+            System.out.println(counter + ") " + child.name);
+        }
+    }
+
     public String getName() {
         return name;
     }
