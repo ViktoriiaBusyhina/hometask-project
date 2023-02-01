@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Person {
@@ -17,7 +19,7 @@ public class Person {
 
     private Person dad;
 
-    private Person[] children;
+    private List<Person> children;
 
     private Sex sex;
 
@@ -28,6 +30,8 @@ public class Person {
     public void setSex(Sex sex) {
         this.sex = sex;
     }
+
+
 
     public Person() {
 
@@ -82,6 +86,14 @@ public class Person {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public List<Person> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Person> children) {
+        this.children = children;
     }
 
     @Override

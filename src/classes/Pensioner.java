@@ -14,6 +14,14 @@ public class Pensioner extends Person {
         System.out.println("и, что-то произошло....");
         super.die();
         System.out.println("Ага, вот так случилось!");
+
+        int countOfChildren = 0;
+        if (getChildren() != null) {
+            countOfChildren = getChildren().size();
+        }
+
+        System.out.println("Зато у меня" + countOfChildren + "детей");
+
     }
 
     public void abc(int a) {

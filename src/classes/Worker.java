@@ -2,6 +2,8 @@ package classes;
 
 public class Worker extends Person implements AbleToCalculatePension {
 
+    private static final int MONEY_PER_CHILD = 200;
+
     private double minSalary;
     private double maxSalary;
 
@@ -98,7 +100,16 @@ public class Worker extends Person implements AbleToCalculatePension {
     public double requestFundToCalculatePension() {
         PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина",  "16-01-2023", TypeOfFund.STATE);
         int years = getYears();
-        double result = pensionFund.calculatePension(years, minSalary, maxSalary);
+
+        int additionalSalary = 0;
+
+        if (getChildren() != null) {
+            additionalSalary = getChildren().size() * MONEY_PER_CHILD;
+        }
+
+        additionalSalary += minSalary;
+
+        double result = pensionFund.calculatePension(years, additionalSalary, maxSalary);
         return result;
     }
 
