@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.List;
+import java.util.Set;
 
 public class Worker extends Person implements AbleToCalculatePension {
 
@@ -12,6 +13,25 @@ public class Worker extends Person implements AbleToCalculatePension {
     private Month month;
 
     private List<Company> companyList;
+
+    private Set<PensionFund> availablePensionFunds;
+
+    public Set<PensionFund> getAvailablePensionFunds() {
+        return availablePensionFunds;
+    }
+
+    public void setAvailablePensionFunds(Set<PensionFund> availablePensionFunds) {
+        this.availablePensionFunds = availablePensionFunds;
+    }
+
+    //Не так давно мы делали в классе Worker метод, который рассчитывает пенсию.
+    //Для расчета пенсии использовался "хардкодинг", когда мы прямо в методе создавали непонятный пенсионный фонд. Сегодня от этого откажемся.
+    //
+    //1) Добавить в класс Worker поле - множество (Set) из Пенсионных фондов.
+    //2) Добавить для него гетер и сетер
+    //3) в методе расчета пенсии взять Set из пенсионных фондов и для каждого из них посчитать возможную пенсию, выбрать наиболее выгодное предложение и вернуть (return) из этого метода именно самое лучшее предложение (там, где больше всего заплатят). (как это реализовать - полностью на вашей совести)
+    //4) Создать в Main несколько работников и несколько сетов из пенсионных фондов. Заполнить каждому работнику доступные ему пенсионный фонды (см. пункт 1)
+    //5) запустить расчет пенсии
 
     @Override
     public void die() {
@@ -125,19 +145,21 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     @Override
     public double requestFundToCalculatePension() {
-        PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина",  "16-01-2023", TypeOfFund.STATE);
         int years = getYears();
-
         int additionalSalary = 0;
-
         if (getChildren() != null) {
             additionalSalary = getChildren().size() * MONEY_PER_CHILD;
         }
-
         additionalSalary += minSalary;
+        double maxPension = 0.0;
+        for (PensionFund fund : availablePensionFunds) {
+            double result = fund.calculatePension(years, additionalSalary, maxSalary);
+            if (result > maxPension) {
+                maxPension = result;
+            }
+        }
 
-        double result = pensionFund.calculatePension(years, additionalSalary, maxSalary);
-        return result;
+        return maxPension;
     }
 
     @Override
