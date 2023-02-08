@@ -56,14 +56,21 @@ public class MainStack {
         System.out.println(stack.peek());
         System.out.println(stack);
 
-        System.out.println(stack.pop()); // берет первый элемент
+        System.out.println(stack.pop()); // берет последний элемент
         System.out.println(stack);
-        System.out.println(stack.pop()); // берет первый элемент
+        System.out.println(stack.pop()); // берет последний элемент
         System.out.println(stack);
-        System.out.println(stack.pop()); // берет первый элемент]
+        System.out.println(stack.pop()); // берет последний элемент
         System.out.println(stack);
-        System.out.println(stack.pop()); // берет первый элемент]
+        System.out.println(stack.pop()); // берет последний элемент
         //filo
+
+        //a
+        // a -> b
+        //b
+        //b -> c
+
+        //a, b
 
 
         
