@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person>{
 
     //1) Добавьте класс-утилиту для нахождения среднего значения
     //а) метод, в который как параметры приходят 2 числа и возвращает среднее значение
@@ -37,6 +37,15 @@ public class Person {
 
     }
 
+    //1) Реализовать интерфейс comparable для класса Person
+    //
+    //2) Реализация должна быть такой:
+    //сравниваются имена по длине, если имена равны, тогда сравнение идет через возраст.
+    //
+    //3) В классе Company добавить поле holidays типа Map<String, String>.
+    // Для него добавить геттер и сеттер. Записывать в него праздничные дни.
+    // Например "Новый год" -"31 декабря". Для двух компаний составить разные списки праздников
+
     public Person(String name, int years, int height, double weight) {
         this.name = name;
         this.years = years;
@@ -51,6 +60,7 @@ public class Person {
     public void goToWork() {
         System.out.println("Я иду на работу");
     }
+    //() -> System.out.println("Я иду на работу");
 
     public void die() {
         System.out.println("Непонятно что произошло, но кто-то умер");
@@ -139,4 +149,28 @@ public class Person {
                 ", weight=" + weight +
                 '}';
     }
+
+    @Override
+    public int compareTo(Person o) {
+        int firstNameLen = name.length();
+        int secondNameLen = o.name.length();
+
+        if (firstNameLen != secondNameLen) {
+            return Integer.compare(firstNameLen, secondNameLen);
+        }
+        else {
+            return Integer.compare(years, o.years);
+        }
+    }
+
+    //(o) ->  {
+    // int firstNameLen = name.length();
+    //        int secondNameLen = o.name.length();
+    //
+    //        if (firstNameLen != secondNameLen) {
+    //            return Integer.compare(firstNameLen, secondNameLen);
+    //        }
+    //        else {
+    //            return Integer.compare(years, o.years);
+    //        }}
 }

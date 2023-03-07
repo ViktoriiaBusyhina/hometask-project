@@ -1,8 +1,12 @@
 package classes;
 
+import java.util.Map;
+
 public class Company implements Comparable<Company> {
 
     private String name;
+
+    private Map<String, String> holidays;
 
     public Company(String name) {
         this.name = name;
@@ -10,6 +14,14 @@ public class Company implements Comparable<Company> {
 
     public String getName() {
         return name;
+    }
+
+    public Map<String, String> getHolidays() {
+        return holidays;
+    }
+
+    public void setHolidays(Map<String, String> holidays) {
+        this.holidays = holidays;
     }
 
     @Override
