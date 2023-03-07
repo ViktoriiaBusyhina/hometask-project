@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Person implements Comparable<Person>{
+public class Person implements Comparable<Person> {
 
     //1) Добавьте класс-утилиту для нахождения среднего значения
     //а) метод, в который как параметры приходят 2 числа и возвращает среднее значение
@@ -152,8 +152,16 @@ public class Person implements Comparable<Person>{
 
     @Override
     public int compareTo(Person o) {
-        int firstNameLen = name.length();
-        int secondNameLen = o.name.length();
+        int firstNameLen = -1;
+        int secondNameLen = -1;
+
+        if (name != null) {
+            firstNameLen = name.length();
+        }
+
+        if (o.name != null) {
+            secondNameLen = o.name.length();
+        }
 
         if (firstNameLen != secondNameLen) {
             return Integer.compare(firstNameLen, secondNameLen);

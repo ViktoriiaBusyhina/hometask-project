@@ -125,6 +125,10 @@ public class MainStream {
         Sex s1 = function.apply(first);
         System.out.println(s1);
 
+
+        //list.stream()
+               // .filter(person -> person.getYears() > 50)
+
     }
 
 
