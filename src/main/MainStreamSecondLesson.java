@@ -5,6 +5,7 @@ import classes.Sex;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class MainStreamSecondLesson {
 
@@ -12,7 +13,7 @@ public class MainStreamSecondLesson {
         List<Person> people = new ArrayList<>();
 
 
-        Person person5 = new Person("Даниил", 60, Sex.MALE);
+        Person person5 = new Person("Даниил", 60, null);
         people.add(person5);
 
         Person person1 = new Person("Анна", 20, Sex.FEMALE);
@@ -35,7 +36,7 @@ public class MainStreamSecondLesson {
         List<Person> children2 = new ArrayList<>();
         Person child3 = new Person("Ребенок3", 5, Sex.MALE);
         Person child4 = new Person("Ребенок4", 10, Sex.FEMALE);
-        Person child5 = new Person("Ребенок5", 10, Sex.FEMALE);
+        Person child5 = new Person("Ребенок5", 12, Sex.FEMALE);
         children2.add(child3);
         children2.add(child4);
         children2.add(child5);
@@ -62,9 +63,10 @@ public class MainStreamSecondLesson {
         //найти какое-то общее (суммарное) значение
 
         //::
+        //Optional
 
         List<Person> answer = people.stream()
-                .filter(person -> person.getSex().equals(Sex.FEMALE))
+                .filter(person -> person.getSex() != null && person.getSex().equals(Sex.FEMALE))
                 .filter(woman -> woman.getYears() > 50)
                 .map(woman -> woman.getChildren())
                 .flatMap(children -> children.stream())
@@ -72,6 +74,32 @@ public class MainStreamSecondLesson {
 
         System.out.println(answer);
         System.out.println(answer.size());
+
+        //Посчитать общий возраст всех детей
+
+        Optional<Integer> optional = people.stream()
+                .filter(person -> person.getSex() != null)
+                .filter(person -> person.getSex().equals(Sex.FEMALE))
+                .filter(woman -> woman.getYears() > 50)
+                .map(woman -> woman.getChildren())
+                .flatMap(children -> children.stream())
+                .map(child -> child.getYears())
+                .reduce((i1, i2) -> i1 + i2);
+
+        System.out.println(optional.isPresent());
+        if (optional.isPresent()) {
+            System.out.println("Дети есть, их суммарный возраст = " + optional.get());
+        }
+        else {
+            System.out.println("Детей нет, получается, их суммарный возраст = " + 0);
+        }
+
+
+
+
+
+
+
 
 
 
