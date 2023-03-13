@@ -41,6 +41,8 @@ public class MainStreamAdditional {
                 .sorted() //конвейерный метод
                 .collect(Collectors.toSet()); //терминальный
 
+        list.stream().close();
+
         //List<Person> answer3 = list.stream()
         //        .filter(person -> person.getYears() > 35) //конвейерный метод
         //        .sorted() //конвейерный метод

@@ -37,6 +37,12 @@ public class Person implements Comparable<Person> {
 
     }
 
+    public Person(String name, int years, Sex sex) {
+        this.name = name;
+        this.years = years;
+        this.sex = sex;
+    }
+
     //1) Реализовать интерфейс comparable для класса Person
     //
     //2) Реализация должна быть такой:
@@ -142,12 +148,8 @@ public class Person implements Comparable<Person> {
 
     @Override
     public String toString() {
-        return "classes.Person{" +
-                "name='" + name + '\'' +
-                ", years=" + years +
-                ", height=" + height +
-                ", weight=" + weight +
-                '}';
+        return "Человек {" +
+                "name='" + name + '}';
     }
 
     @Override
