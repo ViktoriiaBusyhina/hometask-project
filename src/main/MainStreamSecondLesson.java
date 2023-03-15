@@ -4,6 +4,7 @@ import classes.Person;
 import classes.Sex;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,8 +69,9 @@ public class MainStreamSecondLesson {
         List<Person> answer = people.stream()
                 .filter(person -> person.getSex() != null && person.getSex().equals(Sex.FEMALE))
                 .filter(woman -> woman.getYears() > 50)
-                .map(woman -> woman.getChildren())
-                .flatMap(children -> children.stream())
+                //.map(woman -> woman.getChildren())
+                .map(Person::getChildren)
+                .flatMap(Collection::stream)
                 .toList();
 
         System.out.println(answer);
@@ -81,10 +83,10 @@ public class MainStreamSecondLesson {
                 .filter(person -> person.getSex() != null)
                 .filter(person -> person.getSex().equals(Sex.FEMALE))
                 .filter(woman -> woman.getYears() > 50)
-                .map(woman -> woman.getChildren())
-                .flatMap(children -> children.stream())
-                .map(child -> child.getYears())
-                .reduce((i1, i2) -> i1 + i2);
+                .map(Person::getChildren)
+                .flatMap(Collection::stream)
+                .map(Person::getYears)
+                .reduce(Integer::sum);
 
         System.out.println(optional.isPresent());
         if (optional.isPresent()) {
@@ -93,6 +95,7 @@ public class MainStreamSecondLesson {
         else {
             System.out.println("Детей нет, получается, их суммарный возраст = " + 0);
         }
+
 
 
 
