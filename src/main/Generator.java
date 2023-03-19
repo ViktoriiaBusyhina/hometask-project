@@ -26,17 +26,27 @@ public class Generator {
         String name = "";
         while (name != null) {
             name = bufferedReader.readLine();
-            Person person = new Person();
-            person.setName(name);
-            person.setYears(random.nextInt(0, 80));
-            if (random.nextBoolean()) {
-                person.setSex(Sex.MALE);
+            if (name != null) {
+                Person person = new Person();
+                person.setName(name);
+                person.setYears(random.nextInt(0, 80));
+                if (random.nextBoolean()) {
+                    person.setSex(Sex.MALE);
+                }
+                else {
+                    person.setSex(Sex.FEMALE);
+                }
+                people.add(person);
+                bufferedWriter.write(person.toString());
+                bufferedWriter.newLine();
             }
-            else {
-                person.setSex(Sex.FEMALE);
-            }
-            people.add(person);
         }
+
+        bufferedWriter.close();
+        bufferedReader.close();
+        fileWriter.close();
+        fileReader.close();
+
 
 
 
