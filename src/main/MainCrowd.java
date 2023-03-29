@@ -1,5 +1,6 @@
 package main;
 
+import classes.CrowdService;
 import classes.Person;
 import classes.Sex;
 
@@ -43,5 +44,8 @@ public class MainCrowd {
         person3.setChildren(children2);
 
         people.add(person3);
+
+        CrowdService crowdService = new CrowdService();
+        crowdService.findChildrenForListOfPerson(people);
     }
 }

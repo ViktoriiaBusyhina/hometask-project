@@ -18,17 +18,17 @@ public class MainGenerics {
         listForStringsOnlyForString.add("String5");
         Person person = new Person();
 
-        listForStringsOnlyForString.stream()
-                .filter()
-                .
+       //listForStringsOnlyForString.stream()
+       //        .filter()
+       //        .
 
         //Box<String> stringBox = new Box<>("1233");
         //Box<Integer> integerBox = new Box<>(1234);
         //Box<Person> persBox = new Box<>(person);
 
-        Integer[] arr = new Integer[10];
-        System.out.println(arr.toString());
-        System.out.println(arr.hashCode());
+        //Integer[] arr = new Integer[10];
+        //System.out.println(arr.toString());
+        //System.out.println(arr.hashCode());
 
         //TestGeneric<Integer[]> arrayTest = new TestGeneric<>(new Integer[2]);
         //TestGeneric<int> intTest = new TestGeneric<>(new Integer[2]);

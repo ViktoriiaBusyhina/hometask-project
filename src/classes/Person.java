@@ -74,11 +74,19 @@ public class Person implements Comparable<Person> {
 
     public void infoAboutChildren() {
         int counter = 0;
+
+        if (children == null) {
+            System.out.println("У меня нет детей");
+            System.out.println();
+            return;
+        }
+
         System.out.println("У меня " + children.size() + " детей");
         for (Person child : children) {
             counter++;
             System.out.println(counter + ") " + child.name);
         }
+        System.out.println();
     }
 
     public String getName() {
