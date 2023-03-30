@@ -1,11 +1,10 @@
 package main;
 
-import classes.CrowdService;
-import classes.Person;
-import classes.Sex;
+import classes.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainCrowd {
 
@@ -45,7 +44,28 @@ public class MainCrowd {
 
         people.add(person3);
 
+        List<Worker> workers = new ArrayList<>();
+        workers.add(new Worker());
+        workers.add(new Worker());
+        workers.add(new Worker());
+
+        List<Company> companies = new ArrayList<>();
+        companies.add(new Company("Что-нибудь"));
+
         CrowdService crowdService = new CrowdService();
-        crowdService.findChildrenForListOfPerson(people);
+        //crowdService.findChildrenForListOfPersonSecond(workers);
+
+        //crowdService.findChildrenForListOfPersonSecond(companies);
+
+        List<Object> objects = new ArrayList<>();
+
+        crowdService.findChildrenForListOfPersonThird(workers);
+        crowdService.findChildrenForListOfPersonThird(people);
+        //crowdService.findChildrenForListOfPersonThird(companies);
+        crowdService.findChildrenForListOfPersonFourth(people);
+        System.out.println(people.size());
+
+        crowdService.findChildrenForListOfPersonFourth(objects);
+        System.out.println(objects.size());
     }
 }

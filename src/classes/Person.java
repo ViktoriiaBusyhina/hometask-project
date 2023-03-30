@@ -83,8 +83,10 @@ public class Person implements Comparable<Person> {
 
         System.out.println("У меня " + children.size() + " детей");
         for (Person child : children) {
-            counter++;
-            System.out.println(counter + ") " + child.name);
+            if (child != null) {
+                counter++;
+                System.out.println(counter + ") " + child.name);
+            }
         }
         System.out.println();
     }
