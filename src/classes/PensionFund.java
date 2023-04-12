@@ -9,13 +9,42 @@ public class PensionFund {
     private static final int AVERAGE_SALARY = 1500;
 
     private String name;
-    private final String date;
+    private final int date;
 
     private TypeOfFund type;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public TypeOfFund getType() {
+        return type;
+    }
+
+    public void setType(TypeOfFund type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "PensionFund{" +
+                "name='" + name + '\'' +
+                ", date=" + date +
+                ", type=" + type +
+                '}';
+    }
+
     private List<String> currencies;
 
-    public PensionFund(String name, String date, TypeOfFund type) {
+    public PensionFund(String name, int date, TypeOfFund type) {
         this.name = name;
         this.date = date;
         this.type = type;
@@ -43,20 +72,13 @@ public class PensionFund {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         PensionFund that = (PensionFund) o;
-
-        if (!Objects.equals(name, that.name)) return false;
-        if (!Objects.equals(date, that.date)) return false;
-        return type == that.type;
+        return date == that.date && Objects.equals(name, that.name) && type == that.type && Objects.equals(currencies, that.currencies);
     }
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        return result;
+        return Objects.hash(name, date, type, currencies);
     }
 
     public List<String> getCurrencies() {

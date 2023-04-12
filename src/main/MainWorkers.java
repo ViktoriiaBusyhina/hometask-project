@@ -40,18 +40,18 @@ public class MainWorkers {
 
         Set<PensionFund> set = new HashSet<>();
 
-        PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина", "09-09-1703", TypeOfFund.STATE);
-        set.add(pensionFund);
+       //PensionFund pensionFund = new PensionFund("Пенсионный фонд Берлина", "09-09-1703", TypeOfFund.STATE);
+       //set.add(pensionFund);
 
-        PensionFund pensionFundSecond = new PensionFund("Пенсионный фонд Петьки", "07-02-2023", TypeOfFund.SCAM);
-        set.add(pensionFundSecond);
+       //PensionFund pensionFundSecond = new PensionFund("Пенсионный фонд Петьки", "07-02-2023", TypeOfFund.SCAM);
+       //set.add(pensionFundSecond);
 
-        PensionFund pensionFundThird = new PensionFund("Deutch bank", "07-06-1978", TypeOfFund.NOT_STATE);
-        set.add(pensionFundThird);
+       //PensionFund pensionFundThird = new PensionFund("Deutch bank", "07-06-1978", TypeOfFund.NOT_STATE);
+       //set.add(pensionFundThird);
 
-        worker.setAvailablePensionFunds(set);
+       //worker.setAvailablePensionFunds(set);
 
-        System.out.println(worker.requestFundToCalculatePension());
+       //System.out.println(worker.requestFundToCalculatePension());
 
 
 
